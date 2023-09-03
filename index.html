@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagerank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div id="tutorial-container" class="container">
+    
+            <div class="slideshow-container">
+    
+                <div class="slide fade">
+                    <h1 class="m0">Pagerank</h1>
+                    <p style="margin: 1% 0 10%">The 1 trillion dollar algorithm</p>
+                    <p class="m0"> Know how 
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png" alt="Google_2015_logo"
+                        style="height: 20px;   
+                        vertical-align: middle;"> search works
+                    </p>
+                </div>
+              
+                <div class="slide fade">
+                    <img src="https://s2.glbimg.com/hXAsiQz_l8jxtYFwGMXK9SaYjmw=/620x430/e.glbimg.com/og/ed/f/original/2019/12/03/gettyimages-528779824.jpg">
+                    <p>Google was created in 1998 by the students Larry Page and Sergey Brin.</p>
+                    <p> At that time, search engines were primitive; finding something relevant on the internet was very difficult because things you were looking for were often buried many pages down.</p>
+
+                </div>
+                
+                <div class="slide fade">
+                    <p>The point is that for a good search engine, not only the content matters, but whether other people considered that content relevant. But how to get that?</p>
+
+                    <p>The two young man relied on scientific writings to answer this questions. When writing an article, an author cites articles by other people because they find them relevant to their work.</p>
+
+                    <p>Likewise, in the same way people "link" articles with articles, people link website pages with pages. If a bunch of pages have a link to a page, this page is probably relevant to a lot of people.</p>
+
+                    <p>The algorithm created was named PageRank.</p>
+
+                </div>
+                
+                <div class="slide fade">
+                    
+                    <img height="300px" src="https://upload.wikimedia.org/wikipedia/commons/6/69/PageRank-hi-res.png">
+                    
+                    <p>The PageRank metric of a page represents the probability of a person reaching that page by randomly clicking on hyperlinks.</p>
+                    
+                    <p>The higher the score of a page is, the greater the chance a person will find it interesting and relevant, increasing its position at the top of the search results.</p>
+                </div>
+    
+                <div class="slide fade" style="align-items: center;">
+                    <p>In this program, the circles symbolize web pages. Click on them to link circles with circles. To calculate the PageRank, click on the green button.</p>
+                    <button onclick="play()">Play</button>
+                    
+                    <p style="font-size: small;">To know more, click
+                        <a href="https://pt.wikipedia.org/wiki/PageRank" target="_blank">here</a>
+                    </p>
+                </div>
+              
+            </div>
+    
+
+            <div>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+    
+        <div class="container" id='canvas-container'>
+            
+            <div class="trash-container">                  
+                 <i class="fa fa-trash fa-3x" aria-hidden="true"></i>    
+            </div>
+
+            <canvas id="canvas"></canvas>
+
+            <div class="button-container">
+                <button onclick="addSite()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                <button onclick="restart()"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+                
+                <button onclick="makeSmaller()"><i class="fa fa-compress" aria-hidden="true"></i></button>
+                <button onclick="makeBigger()"><i class="fa fa-expand" aria-hidden="true"></i></button>
+                
+                <button onclick="calculatePagerank()" style="  background: limegreen;
+                border: none;
+                color: white;"><i class="fa fa-check" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+
+    <!-- https://github.com/frogcat/canvas-arrow -->
+    <script src="https://frogcat.github.io/canvas-arrow/canvas-arrow.js"></script>
+
+    <script src="slideshow.js"></script>    
+    
+    <script src="js/Arrow.js"></script>    
+    <script src="js/Site.js"></script>    
+    <script src="js/Trash.js"></script>    
+    <script src="js/EventListeners.js"></script>    
+    <script src="js/utils.js"></script>    
+
+    <script src="pagerank.js"></script>    
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+

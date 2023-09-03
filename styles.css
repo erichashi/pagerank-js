@@ -1,0 +1,168 @@
+*{
+    font-family: Roboto;
+    font-size: revert;
+  }
+
+body{
+  margin: 0;
+  text-align: center;
+  height: 100vh;
+  
+  overscroll-behavior: contain;
+  touch-action: manipulation;
+}
+
+
+main {
+  width: 90%;
+  height: 100%;
+  display: inline-block;
+}
+
+
+.container {
+  height: inherit;
+  display: block;
+}
+
+
+.slideshow-container {
+  height: 90%;
+  text-align: left;
+}
+
+.m0{
+  margin: 0;
+}
+
+.slide {
+  display: none;
+
+  width: 100%;
+  height: inherit;
+
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+.slide img{
+  width: inherit;
+  height: auto;
+  align-self: center;
+  max-width: 500px;
+}
+
+
+.slide button {
+    border: none;
+    cursor: pointer;
+   
+    border-radius: 7px;
+    padding: 10px 15px;
+    margin: 8% 0 2%;
+    width: 30%;
+}
+
+.slide a{
+  text-align: center;
+  margin-top: 5%;
+  font-size: small;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: .8s;
+  animation-name: fade;
+  animation-duration: .8s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+} 
+
+
+#canvas-container{
+  display: none;
+  flex-direction: column;
+}
+
+#canvas-container canvas {
+  margin: 2% 0;
+  border: groove;
+}
+
+#canvas-container button {
+  margin: 0;
+  width: 30px;
+  height: 30px;
+} 
+
+#canvas-container .trash-container { 
+  color: red;
+  position: absolute;
+  top: 2%;
+  left: 8%;
+}
+
+#canvas-container .button-container { 
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+@media (min-width:800px) {
+
+  main{
+    width: 50%;
+  }
+
+  .slide img{
+    max-height: 300px;
+    width: auto;
+  }
+
+  #canvas-container {
+    flex-direction: row;
+  }
+
+  #canvas-container .button-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    justify-content: normal;
+  }
+ 
+  #canvas-container button {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10%;
+  }
+
+  #canvas-container .trash-container {
+    left: 21%;
+  }
+}
